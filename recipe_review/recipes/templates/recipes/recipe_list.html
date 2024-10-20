@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe List</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Recipes</h1>
+    <a href="{% url 'add_recipe' %}">Add New Recipe</a>
+    <ul>
+        {% for recipe in recipes %}
+            <li>
+                <a href="{% url 'recipe_detail' recipe.pk %}">{{ recipe.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
