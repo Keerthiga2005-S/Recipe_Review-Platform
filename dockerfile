@@ -12,8 +12,8 @@ WORKDIR /app
 COPY requirements.txt /app/
 RUN pip install -r requirements.txt
 
-# Copy the project files
-COPY . /app/
+# Copy the project files from subdirectory (e.g., project_name/)
+COPY recipe_review/ /app/
 
 # Expose the port Django runs on
 EXPOSE 8000
